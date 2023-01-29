@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript a DOM</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Změna tříd, události</h1>
+	<p id="zvetsovany" onmouseover="ztucnitText()" onmouseleave="odtucnitText()">V elipse spí pes</p>
+	
+	<button class="tlacitko" onclick="cervenyPriKliknuti()">červený po kliknutí</button> 
+	
+	<p></p>
+
+	<button class="tlacitko" onclick="vetsiPriKliknuti()">větší po kliknutí</button> 
+
+	<div onmouseover="zmenBarvu()" id="ctverecek-1" class="ctverecek zluty"></div>
+
+	<div class="ctverecek zeleny"></div>
+
+	<img class="obrazek" src="obrazky/kocka.jpg">
+
+	<button onclick="zavolejUdalost(event)" class="tlacitko">Čudlajs 1</button> 
+	<button onclick="zavolejUdalost(event)" class="tlacitko">Čudlajs 2</button> 
+	<button onclick="zavolejUdalost(event)" class="tlacitko">Čudlajs 3</button> 
+	<p></p>
+	<button onclick="spustAudio()" class="tlacitko">Play</button> 
+	<button onclick="zastavAudio()" class="tlacitko">Stop</button> 
+	<button onclick="resetAudio()" class="tlacitko">Reset</button> 
+	<button onclick="ztisHlasitost()" class="tlacitko">Ztiš hlasitost</button> 
+	<button onclick="prumernaHlasitost()" class="tlacitko">Průměrná hlasitost</button> 
+	<button onclick="zvysHlasitost()" class="tlacitko">Zvyš hlasitost</button> 
+
+	<audio class="mujPrehravac" src="audio/dingdingdang.mp3" preload="auto">
+	</audio>
+
+	<p></p>
+
+	<script src="main.js"></script>
+
+</body>
+</html>
