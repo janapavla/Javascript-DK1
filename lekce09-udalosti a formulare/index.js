@@ -5,15 +5,15 @@ Když uživatel stiskne šipku doprava, nastavte obrázku s autem CSS vlastnost 
 Při stisknutí šipky doleva nastavte obrázku s autem margin-left zpět na nulu.
 */
 
-const obrazek = document.querySelector('#auto')
+const obrazek = document.querySelector("#auto")
 const handleKey = (event) => {
-    if (event.key === 'ArrowRight') {
-        obrazek.classList.add('auto')
-    } else if (event.key === 'ArrowLeft') {
-        obrazek.classList.remove('auto')
+    if (event.key === "ArrowRight") {
+        obrazek.classList.add("auto")
+    } else if (event.key === "ArrowLeft") {
+        obrazek.classList.remove("auto")
     }
 }
-document.addEventListener('keydown', handleKey)
+document.addEventListener("keydown", handleKey)
 
 
 /* 2 Přihlášení
@@ -28,7 +28,6 @@ const user = {
 Při kliknutí na tlačítko „Přihlásit“ ověřte, že uživatel zadal správné jméno a heslo. Pokud údaje souhlasí, nahraďte formulář na stránce nějakou zprávou, například „Přihlášený uživatel: Bartoloměj“.
 Pokud uživatel zadal špatný e-mail nebo heslo, zobrazte ve formuláři výraznou zprávu „Neplatné přihlašovací údaje“. Zadaný e-mail nechte v políčku vyplněný. Vyplněné heslo naopak vymažte.
 Všimněte si, že se snažíme dodržovat standardní praxi. Uživatel by neměl vědět, jestli zadal špatně heslo nebo e-mail. Nikdo by totiž neměl bý schopný zjistit, jestli v systému daný uživatel už existuje. Zároveň je dobré špatné heslo z políčka vymazat, aby jej mohl uživatel rovnou zkusit napsat znovu.
-
 */
 
 const user = {
@@ -54,7 +53,7 @@ if (emailInput.value === user.email &&
 }   
 // ověříme,jestli uživatel do polí zadal to, co je v const user
 
-document.querySelector("#form").addEventListener('submit', handleSubmit)
+document.querySelector("#form").addEventListener("submit", handleSubmit)
 
 /* 3 Newsletter, kontrola
 úkol z lekce: 
@@ -75,12 +74,12 @@ Přidejte na textové políčko posluchač události input.
 Během toho, jak uživatel píše, kontrolujte, jestli náhodou políčko není prázdné. V takovém případě na políčko přidejte třídu s červeným rámečkem. Pokud je vstup v pořádku, rámeček odeberte.
 Zobrazte červený rámeček i v případě, že zadaný e-mail neobsahuje zavináč. K tomu můžete použít metodu indexOf nebo includes.*/
 
-const formularNewsletter = document.querySelector('#newsletter-form')
-const formularInput = document.querySelector('#newsletter-input')
+const formularNewsletter = document.querySelector("#newsletter-form")
+const formularInput = document.querySelector("#newsletter-input")
 
 const odebirat = (event) => {
 	event.preventDefault()
-    const input = document.querySelector('#newsletter-input')
+    const input = document.querySelector("#newsletter-input")
 	const email = input.value
     formularNewsletter.textContent = `Děkujeme za váš zájem. Těšte se na novinky ze světa frontendu a UX na vaší adrese: ${email}.`
 }
@@ -89,13 +88,13 @@ const odebirat = (event) => {
 const kontrola = (event) => {
     var validRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (formularInput.value.match(validRegex)) {
-        formularInput.classList.remove('alert')
+        formularInput.classList.remove("alert")
 	} else {
-		formularInput.classList.add('alert')
+		formularInput.classList.add("alert")
 	}
 }
 
-formularNewsletter.addEventListener('submit', odebirat)
-formularInput.addEventListener('input', kontrola)
+formularNewsletter.addEventListener("submit", odebirat)
+formularInput.addEventListener("input", kontrola)
 
 // https://www.w3resource.com/javascript/form/email-validation.php
